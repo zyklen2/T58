@@ -5,7 +5,21 @@ public class EngineSensor {
     private int []sensorValuesMax=new int[5];
     private int []currentParameter=new int[5];
     private boolean [] sensorWithError=new boolean[5];
-    public EngineSensor(){
+    public EngineSensor() {
+        for (int i = 0; i < 5; i++) {
+            int random = (int) (Math.random() * 40 + 2);
+            int random2 = (int) (Math.random() * 40 + 2);
+            if(random<random2){
+                sensorValuesMin[i] = random * 25;
+                sensorValuesMax[i] = random2 * 25;
+            }
+            else{
+                sensorValuesMin[i] = random2 * 25;
+                sensorValuesMax[i] = random * 25;
+            }
+        }
+    }
+    /*public EngineSensor(){
         for(int i=0;i<5;i++){
             int random = (int )(Math.random() * 40 + 2);
             sensorValuesMin[i]=random*25;
@@ -18,7 +32,7 @@ public class EngineSensor {
                 }
             }
         }
-    }
+    }*/
     private int getCurrentValue(int min, int max){
         return (int)(Math.random() * max + min);
     }
