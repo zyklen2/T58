@@ -16,14 +16,7 @@ public class Main {
             }
 
         }
-        System.out.println("hier");
         ServiceCenter theServiceCenter = new ServiceCenter(theAirplane,theEmployeeList);
         theAirplane.rollSensorParameters();
-
-
-
-
-
-
     }
 }

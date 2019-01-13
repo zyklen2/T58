@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Engine {
+public class Engine implements IEngine {
     EnginePart[] theEngineParts = new EnginePart[5];
 
     public Engine(){
@@ -9,12 +9,14 @@ public class Engine {
         }
     }
 
+    @Override
     public ArrayList<EngineSensor> getSensores(){
         ArrayList<EngineSensor> theSensorList = new ArrayList<EngineSensor>();
 
         return theSensorList;
     }
 
+    @Override
     public ArrayList<Integer> rollSensorParameters(){
         ArrayList<Integer> theList=new ArrayList<Integer>();
         for(int i=0;i<theEngineParts.length;i++){
@@ -25,6 +27,7 @@ public class Engine {
         }
         return theList;
     }
+    @Override
     public void setGoodValues(){
         for(int i=0;i<theEngineParts.length;i++){
             theEngineParts[i].setGoodValues();

@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Team {
+public abstract class Team {
     ArrayList<String> theTeamResponsibilities=new ArrayList<String>();
     ArrayList<Employee> theEmployees = new ArrayList<Employee>();
     private Team successor;
@@ -39,10 +39,11 @@ public class Team {
     public void notifyAllTeamMembers(String theCurrentAlert){
         for(int i=0;i<theEmployees.size();i++){
             theEmployees.get(i).getTheSmartPhone().setState(theCurrentAlert);
-            System.out.println(theCurrentAlert);
-            //resetAlert();
         }
+        System.out.println("Teammeeting");
+        resetAlert();
     }
+
     public void resetAlert(){
         for(int i=0;i<theEmployees.size();i++) {
             theEmployees.get(i).getTheSmartPhone().setState("No Alert");

@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Airplane {
+public class Airplane implements IAirplane {
     Engine[] theEngines=new Engine[4];
     List<ServiceCenter> observerList = new ArrayList<ServiceCenter>();
     String theCurrentAlert="No Alert";
@@ -14,29 +14,34 @@ public class Airplane {
         }
     }
 
+    @Override
     public void addServiceCenter(ServiceCenter observer) {
         this.observerList.add(observer);
     }
 
 
+    @Override
     public void removeServiceCenter(ServiceCenter observer) {
         //observer.removePlaneToObserve();
         this.observerList.remove(observer);
     }
 
 
+    @Override
     public void notifyAllServiceCenter() {
         for (ServiceCenter observer : observerList) {
             observer.getUpdate();
         }
     }
 
+    @Override
     public String getCurrentAlert(){
         return theCurrentAlert;
     }
 
 
 
+    @Override
     public ArrayList<EngineSensor> getSensores(){
         ArrayList<EngineSensor> theSensorList = new ArrayList<EngineSensor>();
 
@@ -53,6 +58,7 @@ public class Airplane {
         return countSame;
     }
 
+    @Override
     public void rollSensorParameters(){
         int[][] theList= new int[4][3];
         for(int i=0;i<theEngines.length;i++){
@@ -72,7 +78,6 @@ public class Airplane {
                         break;
                 }
             }
-            System.out.println("jup");
         }
         if(compareValues(theList,2,2)>=2){
             theCurrentAlert ="C11";
@@ -129,6 +134,7 @@ public class Airplane {
         }
         this.notifyAllServiceCenter();
     }
+    @Override
     public void setGoodValues(){
         for(int i=0;i<theEngines.length;i++){
             theEngines[i].setGoodValues();

@@ -1,4 +1,4 @@
-public class Employee {
+public class Employee implements IEmployee {
     private int id=0;
     private SmartPhone theSmartPhone;
     String theCurrentState="No Alert";
@@ -8,14 +8,17 @@ public class Employee {
         this.theSmartPhone.addEmployee(this);
     }
 
+    @Override
     public void update() {
         String newState = theSmartPhone.getState();
         theCurrentState=newState;
         System.out.println(theCurrentState);
     }
+    @Override
     public SmartPhone getTheSmartPhone(){
         return theSmartPhone;
     }
+    @Override
     public String getState(){
         return theCurrentState;
     }

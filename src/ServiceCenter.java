@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class ServiceCenter {
+public class ServiceCenter implements IServiceCenter {
     private Airplane planeToObserve;
     ArrayList<Team> theTeams=new ArrayList<Team>();
 
@@ -19,10 +19,17 @@ public class ServiceCenter {
         theTeams.add(theTeam_T05);
     }
 
+    @Override
     public void getUpdate(){
         String theCurrentAlert = planeToObserve.getCurrentAlert();
-        System.out.println(theCurrentAlert);
-        theTeams.get(4).parse(theCurrentAlert);
-        planeToObserve.setGoodValues();
+        if(theCurrentAlert!="No Alert") {
+            theTeams.get(4).parse(theCurrentAlert);
+            planeToObserve.setGoodValues();
+        }
     }
+    /*public void resetAlerts(){
+        for(int i=0;i<theTeams.size();i++){
+            theTeams.get(i).resetAlert();
+        }
+    }*/
 }

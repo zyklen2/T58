@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Team_T03 extends Team {
+public class Team_T03 extends Team implements ITeam_T03 {
     public Team_T03(Team successor, ArrayList<Employee> theEmployees){
         theTeamResponsibilities.add("C06");
         theTeamResponsibilities.add("C08");
@@ -9,8 +9,10 @@ public class Team_T03 extends Team {
         this.theEmployees=theEmployees;
         setSuccessor(successor);
     }
+    @Override
     public void parse(String theAlert){
         if(canHandleAlert(theAlert)){
+            System.out.println("Team T03 alerted with "+theAlert);
             notifyAllTeamMembers(theAlert);
         }
         else{
