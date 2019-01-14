@@ -2,8 +2,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Airplane implements IAirplane {
-    Engine[] theEngines=new Engine[4];
-    List<ServiceCenter> observerList = new ArrayList<ServiceCenter>();
+    IEngine[] theEngines=new Engine[4];
+    List<IServiceCenter> observerList = new ArrayList<IServiceCenter>();
     String theCurrentAlert="No Alert";
     int state = 0;
 
@@ -15,13 +15,13 @@ public class Airplane implements IAirplane {
     }
 
     @Override
-    public void addServiceCenter(ServiceCenter observer) {
+    public void addServiceCenter(IServiceCenter observer) {
         this.observerList.add(observer);
     }
 
 
     @Override
-    public void removeServiceCenter(ServiceCenter observer) {
+    public void removeServiceCenter(IServiceCenter observer) {
         //observer.removePlaneToObserve();
         this.observerList.remove(observer);
     }
@@ -29,7 +29,7 @@ public class Airplane implements IAirplane {
 
     @Override
     public void notifyAllServiceCenter() {
-        for (ServiceCenter observer : observerList) {
+        for (IServiceCenter observer : observerList) {
             observer.getUpdate();
         }
     }
@@ -42,8 +42,8 @@ public class Airplane implements IAirplane {
 
 
     @Override
-    public ArrayList<EngineSensor> getSensores(){
-        ArrayList<EngineSensor> theSensorList = new ArrayList<EngineSensor>();
+    public ArrayList<IEngineSensor> getSensores(){
+        ArrayList<IEngineSensor> theSensorList = new ArrayList<IEngineSensor>();
 
         return theSensorList;
     }

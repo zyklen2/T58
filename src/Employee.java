@@ -1,8 +1,8 @@
 public class Employee implements IEmployee {
     private int id=0;
-    private SmartPhone theSmartPhone;
+    private ISmartPhone theSmartPhone;
     String theCurrentState="No Alert";
-    public Employee(int id,SmartPhone theSmartPhone){
+    public Employee(int id,ISmartPhone theSmartPhone){
         this.id=id;
         this.theSmartPhone=theSmartPhone;
         this.theSmartPhone.addEmployee(this);
@@ -12,10 +12,10 @@ public class Employee implements IEmployee {
     public void update() {
         String newState = theSmartPhone.getState();
         theCurrentState=newState;
-        System.out.println(theCurrentState);
+        System.out.println("Worker"+id+" assigned to State '"+theCurrentState+"'");
     }
     @Override
-    public SmartPhone getTheSmartPhone(){
+    public ISmartPhone getTheSmartPhone(){
         return theSmartPhone;
     }
     @Override

@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
-public class Team_T01 extends Team implements ITeam_T01 {
-    public Team_T01(ArrayList<Employee> theEmployees){
+public class Team_T01 extends Team implements ITeam_T01{
+    public Team_T01(ArrayList<IEmployee> theEmployees){
         theTeamResponsibilities.add("C01");
         theTeamResponsibilities.add("C03");
         theTeamResponsibilities.add("C05");

@@ -1,15 +1,15 @@
 import java.util.ArrayList;
 
 public interface IAirplane {
-    void addServiceCenter(ServiceCenter observer);
+    void addServiceCenter(IServiceCenter observer);
 
-    void removeServiceCenter(ServiceCenter observer);
+    void removeServiceCenter(IServiceCenter observer);
 
     void notifyAllServiceCenter();
 
     String getCurrentAlert();
 
-    ArrayList<EngineSensor> getSensores();
+    ArrayList<IEngineSensor> getSensores();
 
     void rollSensorParameters();
 

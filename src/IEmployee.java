@@ -1,7 +1,7 @@
 public interface IEmployee {
     void update();
 
-    SmartPhone getTheSmartPhone();
+    ISmartPhone getTheSmartPhone();
 
     String getState();
 }

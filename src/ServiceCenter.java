@@ -1,10 +1,10 @@
 import java.util.ArrayList;
 
 public class ServiceCenter implements IServiceCenter {
-    private Airplane planeToObserve;
+    private IAirplane planeToObserve;
     ArrayList<Team> theTeams=new ArrayList<Team>();
 
-    public ServiceCenter(Airplane planeToObserve,ArrayList<ArrayList<Employee>> theEmployees){
+    public ServiceCenter(IAirplane planeToObserve,ArrayList<ArrayList<IEmployee>> theEmployees){
         this.planeToObserve=planeToObserve;
         this.planeToObserve.addServiceCenter(this);
         Team theTeam_T01=new Team_T01(theEmployees.get(0));

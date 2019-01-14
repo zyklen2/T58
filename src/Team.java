@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public abstract class Team {
     ArrayList<String> theTeamResponsibilities=new ArrayList<String>();
-    ArrayList<Employee> theEmployees = new ArrayList<Employee>();
+    ArrayList<IEmployee> theEmployees = new ArrayList<IEmployee>();
     private Team successor;
     public void parse(String theAlert){
         if(getSuccessor() != null){
@@ -27,7 +27,7 @@ public abstract class Team {
         this.successor=successor;
     }
     public Team(){}
-    public Team(ArrayList<Employee> theEmployees,ArrayList<String> theTeamResponsibilities){
+    public Team(ArrayList<IEmployee> theEmployees,ArrayList<String> theTeamResponsibilities){
             this.theEmployees=theEmployees;
             this.theTeamResponsibilities=theTeamResponsibilities;
     }

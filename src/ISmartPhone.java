@@ -1,5 +1,5 @@
 public interface ISmartPhone {
-    void addEmployee(Employee theEmployee);
+    void addEmployee(IEmployee theEmployee);
 
     void removeEmployee();
 

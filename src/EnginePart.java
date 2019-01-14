@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EnginePart implements IEnginePart {
-    EngineSensor[] theEngineSensors = new EngineSensor[10];
+    IEngineSensor[] theEngineSensors = new EngineSensor[10];
 
     public EnginePart(){
         for(int i=0;i<theEngineSensors.length;i++){
@@ -11,8 +11,8 @@ public class EnginePart implements IEnginePart {
     }
 
     @Override
-    public ArrayList<EngineSensor> getSensores(){
-        ArrayList<EngineSensor> theSensorList = new ArrayList<EngineSensor>();
+    public ArrayList<IEngineSensor> getSensores(){
+        ArrayList<IEngineSensor> theSensorList = new ArrayList<IEngineSensor>();
 
         return theSensorList;
     }

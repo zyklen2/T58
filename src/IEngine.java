@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public interface IEngine {
-    ArrayList<EngineSensor> getSensores();
+    ArrayList<IEngineSensor> getSensores();
 
     ArrayList<Integer> rollSensorParameters();
 

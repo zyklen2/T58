@@ -1,10 +1,10 @@
 public class SmartPhone implements ISmartPhone {
-    Employee theEmployee;
+    IEmployee theEmployee;
 
     String state = "No Alert";
 
     @Override
-    public void addEmployee(Employee theEmployee) {
+    public void addEmployee(IEmployee theEmployee) {
         this.theEmployee=theEmployee;
     }
 
