@@ -26,6 +26,10 @@ public class Airplane implements IAirplane {
         this.observerList.remove(observer);
     }
 
+    @Override
+    public List<IServiceCenter> getAllServiceCenter(){
+        return observerList;
+    }
 
     @Override
     public void notifyAllServiceCenter() {
@@ -37,15 +41,6 @@ public class Airplane implements IAirplane {
     @Override
     public String getCurrentAlert(){
         return theCurrentAlert;
-    }
-
-
-
-    @Override
-    public ArrayList<IEngineSensor> getSensores(){
-        ArrayList<IEngineSensor> theSensorList = new ArrayList<IEngineSensor>();
-
-        return theSensorList;
     }
 
     private int compareValues(int[][] listOfValues,int posToCompare,int countToCompare){
@@ -139,5 +134,11 @@ public class Airplane implements IAirplane {
         for(int i=0;i<theEngines.length;i++){
             theEngines[i].setGoodValues();
         }
+        theCurrentAlert="No Alert";
+        System.out.println("Problem solved. Good Parameters set.");
+    }
+
+    public IEngine[] getTheEngines() {
+        return theEngines;
     }
 }

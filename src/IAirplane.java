@@ -1,3 +1,4 @@
+import java.util.List;
 import java.util.ArrayList;
 
 public interface IAirplane {
@@ -5,13 +6,15 @@ public interface IAirplane {
 
     void removeServiceCenter(IServiceCenter observer);
 
+    List<IServiceCenter> getAllServiceCenter();
+
     void notifyAllServiceCenter();
 
     String getCurrentAlert();
 
-    ArrayList<IEngineSensor> getSensores();
-
     void rollSensorParameters();
 
     void setGoodValues();
+
+    IEngine[] getTheEngines();
 }

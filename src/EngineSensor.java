@@ -61,7 +61,16 @@ public class EngineSensor implements IEngineSensor {
         for(int i=0;i<5;i++){
             if(sensorWithError[i]){
                 currentParameter[i]=getCurrentValue(sensorValuesMin[i],sensorValuesMax[i]);
+                sensorWithError[i]=false;
             }
         }
+    }
+    @Override
+    public int []getCurrentParameter(){
+        return currentParameter;
+    }
+
+    public boolean[] getSensorWithError() {
+        return sensorWithError;
     }
 }

@@ -13,6 +13,9 @@ public class SmartPhone implements ISmartPhone {
         this.theEmployee=null;
     }
 
+    public IEmployee getTheEmployee() {
+        return theEmployee;
+    }
 
     @Override
     public void notifyEmployee() {

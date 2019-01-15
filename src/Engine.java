@@ -10,12 +10,6 @@ public class Engine implements IEngine {
     }
 
     @Override
-    public ArrayList<IEngineSensor> getSensores(){
-        ArrayList<IEngineSensor> theSensorList = new ArrayList<IEngineSensor>();
-        return theSensorList;
-    }
-
-    @Override
     public ArrayList<Integer> rollSensorParameters(){
         ArrayList<Integer> theList=new ArrayList<Integer>();
         for(int i=0;i<theEngineParts.length;i++){
@@ -31,5 +25,9 @@ public class Engine implements IEngine {
         for(int i=0;i<theEngineParts.length;i++){
             theEngineParts[i].setGoodValues();
         }
+    }
+
+    public IEnginePart[] getTheEngineParts() {
+        return theEngineParts;
     }
 }

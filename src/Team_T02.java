@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Team_T02 extends Team implements ITeam_T02{
+public class Team_T02 extends Team {
     public Team_T02(Team successor, ArrayList<IEmployee> theEmployees){
         theTeamResponsibilities.add("C02");
         theTeamResponsibilities.add("C04");

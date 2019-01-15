@@ -8,4 +8,6 @@ public interface ISmartPhone {
     String getState();
 
     void setState(String state);
+
+    IEmployee getTheEmployee();
 }
