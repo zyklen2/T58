@@ -36,6 +36,8 @@ public abstract class Team {
         return theTeamResponsibilities;
     }
 
+
+
     public void notifyAllTeamMembers(String theCurrentAlert){
         for(int i=0;i<theEmployees.size();i++){
             theEmployees.get(i).getTheSmartPhone().setState(theCurrentAlert);
@@ -48,5 +50,12 @@ public abstract class Team {
         for(int i=0;i<theEmployees.size();i++) {
             theEmployees.get(i).getTheSmartPhone().setState("No Alert");
         }
+    }
+    public ArrayList<String> getTeamMemberStatus(){
+        ArrayList<String> theStatuses = new ArrayList<String>();
+        for(int i=0;i<theEmployees.size();i++){
+            theStatuses.add(theEmployees.get(i).getState());
+        }
+        return theStatuses;
     }
 }

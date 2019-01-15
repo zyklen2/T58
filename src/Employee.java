@@ -12,7 +12,7 @@ public class Employee implements IEmployee {
     public void update() {
         String newState = theSmartPhone.getState();
         theCurrentState=newState;
-        System.out.println("Worker"+id+" assigned to State '"+theCurrentState+"'");
+        //System.out.println("Worker with ID: "+id+" assigned to State '"+theCurrentState+"'");
     }
     @Override
     public ISmartPhone getTheSmartPhone(){
