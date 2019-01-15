@@ -70,6 +70,8 @@ public class TheTest {
             }
         }
         assertEquals(0,sensorsWithError);
+        assertEquals(theAirplane.getCurrentAlert(),"No Alert");//Auch hier sollte wieder "No Alert" herauskommen,
+        //da der Fehler innerhalb der rollSensorParameters Methode direkt behoben wird
     }
     @Test
     public void TestIEmployeeAndSmartPhone(){
